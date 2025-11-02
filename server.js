@@ -29,6 +29,11 @@ mongoose.connect(process.env.MONGO_URI, {
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running successfully. Use /api endpoints.");
+});
+
+
 
 const PORT = process.env.PORT || 5000;
 
